@@ -4,23 +4,17 @@ import styled from "styled-components";
 const StatContainer = styled.div`
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
-    @media only screen and (max-width:720px){
-        margin-bottom:20px;
-        align-items:center;
-        justify-content:center;
-    }
-    
+    justify-content:center;
+    align-items:center;
+
 `
 
 const StatValue = styled.h3`
-    color:hsl(0, 0%, 100%);
-    margin-bottom:7px;
+    margin-bottom:5px;
 `
 
 const StatAttribute = styled.p`
-    font-family: 'Lexend Deca', sans-serif;
-    color:hsla(0, 0%, 100%, 0.75);
+    color:hsl(0, 0%, 59%);
     font-size:10px;
 `
 
