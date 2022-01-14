@@ -12,6 +12,10 @@ const Container = styled.div`
     justify-content:center;
     font-family: 'Red Hat Display', sans-serif;
 
+    @media only screen and (max-width:390px){
+        background-image:url("/assets/OrderSummaryCard/pattern-background-mobile.svg");
+    }
+
 `
 
 const Wrapper = styled.div`
