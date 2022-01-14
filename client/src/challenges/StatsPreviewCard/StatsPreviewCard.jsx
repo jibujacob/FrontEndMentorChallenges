@@ -1,72 +1,116 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 import Stat from './components/Stat';
 
 const Container = styled.div`
     width:100vw;
-    min-height:100vh;
+    height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family: 'Inter', sans-serif;
-    color:hsl(0, 0%, 100%);
     background-color:hsl(233, 47%, 7%);
-`
+    color:hsl(0, 0%, 100%);
+    font-family: 'Inter', sans-serif;
 
+    @media only screen and (max-width:720px){
+        width:100vw;
+        min-height:100vh;
+    }
+`
 const Wrapper = styled.div`
     display:flex;
-    width:70%;
-    justify-content:center;
-    @media only screen and (max-width:900px){
+    max-width:900px;
+    max-height:500px;
+    margin:50px 20px;
+
+    @media only screen and (max-width:720px){
         flex-direction:column-reverse;
+        max-height:95%;
+    }
+    
+`
+
+const Left = styled.div`
+    padding:50px 70px 50px 50px;
+    background-color:hsl(244, 38%, 16%);
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    display:flex;
+    flex-direction:column;
+
+    @media only screen and (max-width:720px){
+        padding:0;
+        width:100%;
+        height:90%;
+        border-top-left-radius:0;
+        border-bottom-right-radius:10px;
+        align-items:center;
+        justify-content:center;
     }
 `
 
-const LeftContainer  = styled.div`
-    background-color:hsl(244, 38%, 16%);
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-    flex-direction:column;
+const Title = styled.h1`
+    margin:30px 0;
+    @media only screen and (max-width:720px){
+        text-align:center;
+        margin-bottom:10px;
+        width:85%;
+    }
+
 `
 
-const Title = styled.h1`
-    width:60%;
+const Span=styled.span`
+    color:hsl(277, 64%, 61%);
+    
 `
 
 const Content = styled.p`
-    width:60%;
+    margin:30px 0 40px;
+    color:hsla(0, 0%, 100%, 0.75);
+    font-size:15px;
+    line-height:1.5;
+
+    @media only screen and (max-width:720px){
+        text-align:center;
+        margin:10px 0 30px;
+        width:90%;
+    }
 `
 
-const StatContainer = styled.div`
-    width:60%;
+const StatsDetails = styled.div`
     display:flex;
+    margin-top:60px;
     align-items:center;
     justify-content:space-between;
+    width:90%;
+
+    @media only screen and (max-width:720px){
+        flex-direction:column;
+        margin:0;
+    }
 `
 
-const RightContainer = styled.div`
-    height:100%;
-    position:relative;
-
-`
-
-const Image = styled.img`
-    object-fit:cover;
-    height:auto;
+const Right = styled.div`
     width:100%;
-
-`
-
-const Overlay = styled.div`
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:0 auto;
+    max-height:100%;
+    background-image:url("/assets/StatsPreviewCard/image-header-desktop.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
     background-color:hsl(277, 64%, 61%);
-    mix-blend-mode: multiply;
+    background-blend-mode:multiply;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    
+
+    @media only screen and (max-width:720px){
+        flex-direction:column-reverse;
+        width:100%;
+        min-height:300px;
+        background-image:url("/assets/StatsPreviewCard/image-header-mobile.jpg");
+        border-top-left-radius:10px;
+        border-bottom-right-radius:0;
+
+    }
 `
 
 
@@ -74,22 +118,19 @@ const StatsPreviewCard = () => {
     return (
         <Container>
             <Wrapper>
-                <LeftContainer>
-                    <Title>Get insights that help your business grow.</Title>
+                <Left>
+                    <Title>Get <Span>insights</Span> that help your business grow.</Title>
                     <Content>
                         Discover the benefits of data analytics and make better decisions regarding revenue, customer 
                         experience, and overall efficiency.
                     </Content>
-                    <StatContainer>
-                        <Stat value="10k+" attribute="COMPANIES" />
-                        <Stat value="314" attribute="TEMPLATES" />
-                        <Stat value="12M+" attribute="QUERIES" />
-                    </StatContainer>
-                </LeftContainer>
-                <RightContainer>
-                    <Image src="/assets/StatsPreviewCard/image-header-desktop.jpg" alt="image"/>
-                    <Overlay/>
-                </RightContainer>
+                    <StatsDetails>
+                        <Stat value="10k+" attribute="COMPANIES"/>
+                        <Stat value="314" attribute="TEMPLATES"/>
+                        <Stat value="12M+" attribute="QUERIES"/>
+                    </StatsDetails>
+                </Left>
+                <Right></Right>
             </Wrapper>
         </Container>
     )

@@ -5,6 +5,12 @@ const StatContainer = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+
+    @media only screen and (max-width:720px){
+        margin-bottom:20px;
+        align-items:center;
+        justify-content:center;
+    }
     
 `
 
