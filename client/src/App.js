@@ -1,3 +1,4 @@
+import ArticlePreview from "./challenges/ArticlePreview/ArticlePreview";
 import NFTPreviewCard from "./challenges/NFTPreviewCard/NFTPreviewCard";
 import OrderSummaryCard from "./challenges/OrderSummaryCard/OrderSummaryCard";
 import ProfileCard from "./challenges/ProfileCard/ProfileCard";
@@ -12,8 +13,9 @@ function App() {
       <OrderSummaryCard/>
       <StatsPreviewCard/>
       <ThreeColumnPreviewCard/>
-      <ProfileCard/> */}
-      <SocialProofSection/>
+      <ProfileCard/>
+      <SocialProofSection/> */}
+      <ArticlePreview/>
 
     </>
   );
