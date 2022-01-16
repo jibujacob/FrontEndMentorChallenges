@@ -1,0 +1,32 @@
+#Deployment Setup for Client service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontendmentorsolutionsclient-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontendmentorsolutionsclient
+  template:
+    metadata:
+      labels:
+        app: frontendmentorsolutionsclient
+    spec:
+      containers:
+        - name: frontendmentorsolutionsclient
+          image: jibujacob/frontendmentorsolutions
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontendmentorsolutionsclient-srv
+spec:
+  selector:
+    app: frontendmentorsolutionsclient
+  type: ClusterIP
+  ports:
+    - name: frontendmentorsolutionsclient
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
