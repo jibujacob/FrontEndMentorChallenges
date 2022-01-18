@@ -41,4 +41,10 @@ export const Challenges = [
         Description: "This project will test your layout skills. If you're starting to get confident with Flexbox or Grid, this will provide a nice challenge!",
         Name:"Social proof"
       },
+    {
+      id:"FourCardFeature",
+      Image: "/assets/FourCardFeature/desktop-design.jpg",
+      Description: "A nice layout-based challenge for beginners. This will test anyone who is new to multi-column and responsive layouts.",
+      Name:"Four Card"
+    },
 ]

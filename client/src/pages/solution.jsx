@@ -11,6 +11,7 @@ const Container = styled.div`
     padding:30px 50px;
     font-family: 'Manrope', sans-serif;
     background-color:#d3e1e3;
+    top:50px;
 `
 
 const Wrapper = styled.div`
@@ -42,7 +43,7 @@ const Solution = () => {
                 <OptionContainer>
                     {Challenges.map(challenge => {
                         return (
-                            <>
+                            <div key={challenge.id}>
                                 <Link to={"/challenge/"+challenge.id} style={{textDecoration:"none"}}>
                                     <Solutiontile 
                                         challengeImage={challenge.Image}
@@ -50,7 +51,7 @@ const Solution = () => {
                                         challengeDesc={challenge.Description}
                                     />
                                 </Link>
-                            </>
+                            </div>
                         )
                     })}
                 </OptionContainer>
