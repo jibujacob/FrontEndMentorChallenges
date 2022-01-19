@@ -1,6 +1,7 @@
 # FrontEndMentor Challenges
 
-    This website is built to collate all the frontend Mentor challenges I have completed as part of skill refinement and design implementations practice
+    This website is built to collate all the frontend Mentor challenges I have completed as 
+    part of skill refinement and design implementations practice
 
 ## Framework/Packages Used
 
